@@ -11,11 +11,18 @@ router.get("/", (req, res) => {
     })
 })
 
-router.post("/", (req, res) => {
-    burger.lookforburgers((data) => {
-        res.render("index", { burgers: data })
-    })
+router.post("/api/burger/:id", (req, res) => {
+    deleteid = req.params.id;
+    burger.eatBurger({ id: deleteid }, (data) => {
+        if (data.changedRows === 0) {
+            return res.status(404).end();
+        } else {
+            res.status(200).end();
+        }
+    });
 })
+
+
 
 // burgermaster.lookforburgers((res) => {
 //     console.log(res)
