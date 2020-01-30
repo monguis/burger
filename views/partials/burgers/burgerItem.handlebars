@@ -1,0 +1,15 @@
+<li>
+	{{burger_name}}
+	{{#if devoured}}
+	<button class="eatBurger" data-id="{{id}}" data-devoured="{{devoured}}">
+		EAT DA BURGER BRUH
+	</button>{{/if}}
+	<button class="delete" data-id="{{id}}">
+		Delete Burger
+	</button>
+</li>
+
+
+{{!-- id INT AUTO_INCREMENT PRIMARY KEY,
+burger_name VARCHAR(100),
+devoured BOOL DEFAULT FALSE --}}
