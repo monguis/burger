@@ -11,6 +11,11 @@ router.get("/", (req, res) => {
     })
 })
 
+router.post("/", (req, res) => {
+    burger.lookforburgers((data) => {
+        res.render("index", { burgers: data })
+    })
+})
 
 // burgermaster.lookforburgers((res) => {
 //     console.log(res)
