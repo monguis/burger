@@ -16,19 +16,15 @@ app.set("view engine", "handlebars");
 // console.log("before the server run")
 app.listen(PORT, (err) => {
     if (err) throw err;
+console.log("WORKING ON PORT " + PORT)
 
 
-    burgermaster.deleteBurger({ id: 3 }, (res) => {
-        console.log(res);
-    });
-
-    console.log("jalando al port "+PORT);
-    burgermaster.lookforburgers((res) => {
-        console.log(res)
-    });
-
-
-
+    // burgermaster.deleteBurger({id : 2},(data)=>{
+    //     // if(data.affectedRows === 0){
+    //     //     return res.status(404).end();
+    //     // }
+    //        console.log(data)
+    // })
 
 });
 
