@@ -23,17 +23,18 @@ $(function () {
 
     $(".create-form").on("submit", function (evt) {
         evt.preventDefault();
+        if ($("#bh").val().trim()) {
         var BurgerName = {
             burger_name: $("#bh").val().trim()
         };
-        
-        $.ajax("/api/burger", {
-            type: "POST",
-            data: BurgerName
-        }).then(() => {
-            location.reload();
-        });
-        $("#bh").val("");
+            $.ajax("/api/burger", {
+                type: "POST",
+                data: BurgerName
+            }).then(() => {
+                location.reload();
+            });
+            $("#bh").val("");
+        }
     });
 })
 // $(this).data("id")

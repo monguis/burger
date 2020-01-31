@@ -1,10 +1,10 @@
-<li>
+<li class="list-group-item list-group-item-action bg-transparent">
 	{{burger_name}}
 	{{#if devoured}}
-	<button class="eatBurger" data-id="{{id}}" data-devoured="{{devoured}}">
+	<button class="eatBurger btn btn-primary" data-id="{{id}}" data-devoured="{{devoured}}">
 		EAT DA BURGER BRUH
 	</button>{{/if}}
-	<button class="delete" data-id="{{id}}">
+	<button class="delete btn btn-danger" data-id="{{id}}">
 		Delete Burger
 	</button>
 </li>

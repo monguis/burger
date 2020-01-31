@@ -1,71 +1,46 @@
 <header>
-    <h1>
+    <h1 class="text-center">
         Eat That Burger!!
     </h1>
 </header>
+<img src="https://cdn.onlinewebfonts.com/svg/img_482470.png" class="img-fluid w-25 rounded mx-auto d-block"
+    alt="burgerIcon">
 
-<div class="row">
-    <ul>
-        {{#each burgers}}
-        {{#unless devoured}}
-        {{> burgers/burgerItem devoured=true}}
-        {{/unless}}
-        {{/each}}
-    </ul>
+<div class="container">
+    <div class="row">
+        <div class="col-7">
+            <h2>Burgers to Devour </h2>
+            <ul class="list-group">
+                {{#each burgers}}
+                {{#unless devoured}}
+                {{> burgers/burgerItem devoured=true}}
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="col-5">
+            <h2>Burgers You Ate </h2>
 
-    <h2>Burgers You Ate </h2>
-
-    <ul>
-        {{#each burgers}}
-        {{#if devoured}}
-        {{> burgers/burgerItem devoured=false}}
-        {{/if}}
-        {{/each}}
-    </ul>
-
-</div>
-
-
-<h2>Have you discovered a New BURGAH!? Don't forget it, Type the name down below</h2>
-<form class="create-form">
-
-    <div class="form-group">
-        <label for="bh">New Burger</label>
-        <input type="text" id="bh" name="burger_name">
+            <ul class="list-group">
+                {{#each burgers}}
+                {{#if devoured}}
+                {{> burgers/burgerItem devoured=false}}
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
     </div>
 
-    <button type="submit">NEW BURGAH!!!</button>
-</form>
 
+    <h2 class="text-center">Have you discovered a New BURGAH!? Don't forget it, Type the name down below</h2>
+    <form class="create-form">
 
-
-
-
-
-
-{{!-- 
-
-
-<h1>Cats!</h1>
-
-<h2>Cats that are not sleepy!</h2>
-
-<ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Cats that are sleepy!</h2>
-
-<ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
- --}}
+        <div class="input-group mb-3 form-group">
+            <input type="text" name="burger_name" class="form-control" id="bh" placeholder="Burger Name"
+                aria-label="Recipient's username" aria-describedby="button-addon2">
+            <div class="input-group-append">
+                <button class="btn btn btn-success " type="submit" id="button-addon2">NEW BURGAH!!!</button>
+            </div>
+        </div>
+    </form>
+</div>
