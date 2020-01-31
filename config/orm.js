@@ -10,7 +10,7 @@ const orm = {
         });
     }, insertOne: function (colToInsert, dataEntry,cb) {
         // INSERT INTO burgers SET burger_name = "Chimiburger";
-        var queryString = "INSERT INTO ?? SET ?";
+        var queryString = "INSERT INTO ?? SET ?;";
         connection.query(queryString, [colToInsert, dataEntry], function (err, result) {
             if (err) throw err;
             cb(result);

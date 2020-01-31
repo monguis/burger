@@ -6,11 +6,12 @@ const burger = {
             cb(data)
         });
     },
-    abbBurger: function (burgerName, cb) {
-        orm.insertOne("burgers", {burger_name:burgerName,devoured:false}, (x) => {
+    abbBurger: function (newBurger, cb) {
+        orm.insertOne("burgers", newBurger, (x) => {
             cb(x);
         })
     },
+
     eatBurger: function (burgertoEat, cb) {
         orm.updateOne('burgers', { devoured: true }, burgertoEat, (x) => {
             cb(x);

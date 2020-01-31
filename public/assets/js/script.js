@@ -5,7 +5,7 @@ $(function () {
         id = $(this).data("id");
 
         $.ajax("/api/burger/" + id, {
-            type: "POST"
+            type: "PUT"
         }).then(() => {
             location.reload();
         });
@@ -19,6 +19,21 @@ $(function () {
         }).then(() => {
             location.reload();
         });
+    });
+
+    $(".create-form").on("submit", function (evt) {
+        evt.preventDefault();
+        var BurgerName = {
+            burger_name: $("#bh").val().trim()
+        };
+        
+        $.ajax("/api/burger", {
+            type: "POST",
+            data: BurgerName
+        }).then(() => {
+            location.reload();
+        });
+        $("#bh").val("");
     });
 })
 // $(this).data("id")

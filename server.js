@@ -5,10 +5,10 @@ const PORT = process.env.PORT || 8080;
 const routes = require("./controllers/burgers_controller.js");
 const app = express();
 
-app.use(routes);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+app.use(routes);
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
@@ -19,12 +19,8 @@ app.listen(PORT, (err) => {
 console.log("WORKING ON PORT " + PORT)
 
 
-    // burgermaster.deleteBurger({id : 2},(data)=>{
-    //     // if(data.affectedRows === 0){
-    //     //     return res.status(404).end();
-    //     // }
-    //        console.log(data)
-    // })
+    
+
 
 });
 

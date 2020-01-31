@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
     })
 })
 
-router.post("/api/burger/:id", (req, res) => {
+router.put("/api/burger/:id", (req, res) => {
     devourId = req.params.id;
     burger.eatBurger({ id: devourId }, (data) => {
         if (data.changedRows === 0) {
@@ -20,7 +20,7 @@ router.post("/api/burger/:id", (req, res) => {
             res.status(200).end();
         }
     });
-})
+});
 
 router.delete("/api/burger/:id",(req,res)=>{
     deleteId = req.params.id;
@@ -32,7 +32,17 @@ router.delete("/api/burger/:id",(req,res)=>{
             res.json(data);
             res.status(200).end();
     })
+});
+
+router.post("/api/burger",(req,res)=>{
+    const newBurger = req.body;
+    console.log(newBurger)
+    burger.abbBurger(newBurger,(data)=>{
+        res.json({ id: data.insertId });
+    })
 })
+
+
 
 
 
